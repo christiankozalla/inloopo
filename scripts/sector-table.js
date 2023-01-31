@@ -11,7 +11,7 @@ class SectorTable extends HTMLElement {
   table;
 
   async connectedCallback() {
-    const data = await fetch('/data/sector-performance.json').then(res => res.json());
+    const data = await fetch('/inloopo/data/sector-performance.json').then(res => res.json());
     const template = document.createElement("template");
     template.innerHTML = this.render(data.sectors);
     this.shadowRoot.appendChild(template.content.cloneNode(true));
